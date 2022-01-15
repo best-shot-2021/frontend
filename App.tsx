@@ -27,7 +27,7 @@ const muiTheme = createTheme({
 export function App(): React.ReactElement {
   const [chatCtl] = React.useState(
     new ChatController({
-      showDateTime: true,
+      showDateTime: false,
     }),
   );
 

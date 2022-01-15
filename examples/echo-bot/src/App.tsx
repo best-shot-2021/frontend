@@ -16,6 +16,9 @@ import {
 } from 'chat-ui-react';
 import React from 'react';
 
+const cellDetective = 'https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcXtj3N%2FbtrqLw8q2uU%2FwyMwmICU8mvDN4wKBmHpw0%2Fimg.png';
+
+
 const muiTheme = createTheme({
   palette: {
     primary: {
@@ -27,7 +30,7 @@ const muiTheme = createTheme({
 export function App(): React.ReactElement {
   const [chatCtl] = React.useState(
     new ChatController({
-      showDateTime: true,
+      showDateTime: false,
     }),
   );
 
@@ -68,14 +71,14 @@ async function echo(chatCtl: ChatController): Promise<void> {
     type: 'text',
     content: `안녕 나는 명탐정 세포야!`,
     self: false,
-    avatar: 'https://blogfiles.pstatic.net/MjAyMjAxMTVfMTIy/MDAxNjQyMTgyNDkwMzI1.D0SLDp4DZ61napZY4n1dqYmSIqUS3QJd2cwpcdxWGfAg.4e-SfbwmQ14it-IKDfKHOh-ibfvtz-iYZ9LJVrI1Pv0g.PNG.100yewon/%EB%AA%85%ED%83%90%EC%A0%95.png?type=w1',
+    avatar: cellDetective,
     username:'명탐정 세포',
   });
   await chatCtl.addMessage({
     type: 'text',
     content: `너 이름은 뭐야?`,
     self: false,
-    avatar: '-',
+    avatar: cellDetective,
     username:'명탐정 세포',
   });
 
@@ -85,9 +88,9 @@ async function echo(chatCtl: ChatController): Promise<void> {
   });
   await chatCtl.addMessage({
     type: 'text',
-    content: `${text.value}~ 세포마을에 온 걸 환영해!`,
+    content: `${text.value} 반가워~ 세포마을에 온 걸 환영해!`,
     self: false,
-    avatar: '-',
+    avatar: cellDetective,
   });
 
   await chatCtl.addMessage({
